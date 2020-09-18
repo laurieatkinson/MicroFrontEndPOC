@@ -1,0 +1,22 @@
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+@{
+    string rootUrl = Configuration["rootUrl"];
+}
+<link rel="stylesheet" href="@rootUrl/css/site.css" />
+<div id="webapp2">
+    <div class="text-center">
+        <h3>Web App #2</h3>
+    </div>
+    <div id="spinner" style="display:none;">
+        <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+</div>
+<script src="@rootUrl/js/site.js" asp-append-version="true"></script>
+@RenderSection("Scripts", required: false)
+

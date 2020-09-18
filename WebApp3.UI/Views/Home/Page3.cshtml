@@ -1,0 +1,14 @@
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+@{
+    string rootUrl = Configuration["rootUrl"];
+}
+<div id="content">
+    <div class="text-center">
+        <h4>Page Three</h4>
+    </div>
+    <a data-ajax="true" data-ajax-url="@rootUrl/home/page2" data-ajax-update="#webapp3 #content"
+       data-ajax-loading="#webapp3 #spinner">Back</a>&nbsp;
+    <a data-ajax="true" data-ajax-url="@rootUrl/" data-ajax-update="#webapp3"
+       data-ajax-loading="#webapp3 #spinner">Complete</a>
+</div>

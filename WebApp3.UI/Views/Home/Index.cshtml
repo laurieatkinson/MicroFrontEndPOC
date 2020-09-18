@@ -1,0 +1,23 @@
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+@{
+    string rootUrl = Configuration["rootUrl"];
+}
+@model Page1ViewModel
+<div id="content">
+    <div class="text-center">
+        <h4>Page One</h4>
+    </div>
+    <div id="page1-form">
+        <form method="POST" data-ajax="true" data-ajax-url="@rootUrl" data-ajax-update="#webapp3 #content">
+            @*data-ajax-failure="failed"*@
+            First Name: <input asp-for="FirstName" /> <br />
+            <span asp-validation-for="FirstName" class="text-danger"></span> <br />
+            Last Name: <input asp-for="LastName" /> <br />
+            <span asp-validation-for="LastName" class="text-danger"></span> <br />
+            <hr />
+            <button id="submitButton" type="submit">Save</button>
+        </form>
+    </div>
+</div>
+<script src="@rootUrl/js/page1.js" asp-append-version="true"></script>

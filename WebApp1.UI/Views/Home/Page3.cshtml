@@ -1,0 +1,16 @@
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+@addTagHelper *, WebApp1.UI
+@{
+    string rootUrl = Configuration["rootUrl"];
+}
+
+<div id="content">
+    <div class="text-center">
+        <h4>Page Three</h4>
+    </div>
+    <vc:my-list extra-info="even more stuff"></vc:my-list>
+    <a data-ajax="true" data-ajax-url="@rootUrl" data-ajax-update="#webapp1"
+       data-ajax-loading="#webapp1 #spinner">Back to home</a>
+</div>
+

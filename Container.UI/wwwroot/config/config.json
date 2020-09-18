@@ -1,0 +1,6 @@
+{
+  "app1Location": "http://localhost:8001",
+  "app2Location": "http://localhost:8002",
+  "app3Location": "http://localhost:8003",
+  "app4Location": "http://localhost:8004"
+}

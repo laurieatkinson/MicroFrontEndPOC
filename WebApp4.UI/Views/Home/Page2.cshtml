@@ -1,0 +1,16 @@
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+@{
+    string rootUrl = Configuration["rootUrl"];
+}
+<div id="content">
+    <div class="text-center">
+        <h4>Page Two</h4>
+    </div>
+    Message: <input id="message" />
+    <button id="sendMessageButton">Send Message</button>
+    <hr/>
+    <a data-ajax="true" data-ajax-url="@rootUrl/home/page3" data-ajax-update="#webapp4 #content"
+       data-ajax-loading="#webapp4 #spinner">Next Page</a>
+</div>
+<script src="@rootUrl/js/page2.js" asp-append-version="true"></script>
